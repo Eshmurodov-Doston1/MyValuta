@@ -1,0 +1,80 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:background="@color/backGraund"
+    android:layout_height="wrap_content"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    tools:context=".fragments.CoursesFragment">
+
+    <com.github.ybq.android.spinkit.SpinKitView
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        android:id="@+id/spin_kit"
+        style="@style/SpinKitView.Large.FadingCircle"
+        android:layout_width="50dp"
+        android:layout_height="50dp"
+        android:layout_gravity="center"
+        app:SpinKit_Color="@color/card_color" />
+
+    <androidx.core.widget.NestedScrollView
+        app:layout_constraintTop_toTopOf="parent"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:descendantFocusability="blocksDescendants"
+            android:layout_height="match_parent">
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:id="@+id/cons1"
+                app:layout_constraintTop_toTopOf="parent"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+                <androidx.viewpager2.widget.ViewPager2
+                    android:id="@+id/viewpager"
+                    app:layout_constraintVertical_bias="0.05"
+                    app:layout_constraintTop_toTopOf="parent"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintLeft_toLeftOf="parent"
+                    app:layout_constraintRight_toRightOf="parent"
+                    app:layout_constraintHeight_percent="0.3"
+                    android:layout_width="match_parent"
+                    android:paddingStart="40dp"
+                    android:paddingEnd="40dp"
+                    android:layout_height="wrap_content"/>
+                <ru.tinkoff.scrollingpagerindicator.ScrollingPagerIndicator
+                    android:id="@+id/indicator"
+                    app:spi_dotColor="#9F9A9A"
+                    android:layout_marginTop="10dp"
+                    app:spi_visibleDotCount="11"
+                    app:spi_dotSelectedColor="@color/card_color"
+                    app:spi_dotSelectedSize="10dp"
+                    app:layout_constraintLeft_toLeftOf="parent"
+                    app:spi_dotSize="7dp"
+                    app:spi_dotSpacing="18dp"
+                    app:layout_constraintRight_toRightOf="parent"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintTop_toBottomOf="@id/viewpager"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content" />
+            </androidx.constraintlayout.widget.ConstraintLayout>
+            <androidx.constraintlayout.widget.ConstraintLayout
+                app:layout_constraintTop_toBottomOf="@id/cons1"
+                android:layout_marginTop="10dp"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+                <androidx.recyclerview.widget.RecyclerView
+                    app:layout_constraintTop_toTopOf="parent"
+                    android:id="@+id/course_rv"
+                    tools:listitem="@layout/item_rv"
+                    app:fastScrollEnabled="false"
+                    app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"/>
+            </androidx.constraintlayout.widget.ConstraintLayout>
+        </androidx.constraintlayout.widget.ConstraintLayout>
+    </androidx.core.widget.NestedScrollView>
+
+</androidx.constraintlayout.widget.ConstraintLayout>

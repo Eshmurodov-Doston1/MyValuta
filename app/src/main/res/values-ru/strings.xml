@@ -1,0 +1,10 @@
+<resources>
+    <string name="app_name">Обменные курсы</string>
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="name">Имя</string>
+    <string name="sale">Стоимость</string>
+    <string name="home">Головное окно</string>
+    <string name="calculator">Калькулятор</string>
+    <string name="settings">Настройки</string>
+</resources>
